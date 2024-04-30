@@ -1,0 +1,21 @@
+{
+  "name": "Commentary Extension",
+  "version": "0.1.3",
+  "description": "Collecting data from cricinfo",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://www.espncricinfo.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.espncricinfo.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Commentary Extension",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
